@@ -668,6 +668,21 @@ Content Provider 是Android提供的第三方应用数据的访问方案。
 
 * Service 与 IntentService 的区别。[Link](https://stackoverflow.com/a/15772151/5153275)
 
+        Service的简介:
+        1:什么是service:
+        service是后台服务
+        2:service的作用:
+        为了保证应用程序被挂到后台后某些组件仍然可以工作
+        3:service的弊端:
+        service既不是独立的进程也不是独立的线程，是依赖于主线程的，所以是不建议在service里面做过多的耗时操作的，避免ANR。
+        IntentService的简介:
+        1.什么是intentService:
+        intentService是Service的子类,继承service，拥有service的全部生命周期，包含了service的全部特性;
+        2.intentService的作用:
+        在onCreat被执行时内部会开启一个线程,用于解决在后台服务中进行耗时操作;
+        例如:后台上传图片，批量操作数据库等;
+
+
 * Android 应用的结构是什么？
 
 * Android 应用中如何保存数据。
